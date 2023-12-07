@@ -1,14 +1,18 @@
 input.onButtonPressed(Button.A, function () {
     sprite.change(LedSpriteProperty.Y, 1)
+    radio.sendValue("y", sprite.get(LedSpriteProperty.Y))
 })
 input.onGesture(Gesture.TiltLeft, function () {
     sprite.change(LedSpriteProperty.X, -1)
+    radio.sendValue("x", sprite.get(LedSpriteProperty.X))
 })
 input.onButtonPressed(Button.B, function () {
     sprite.change(LedSpriteProperty.Y, -1)
+    radio.sendValue("y", sprite.get(LedSpriteProperty.Y))
 })
 input.onGesture(Gesture.TiltRight, function () {
     sprite.change(LedSpriteProperty.X, 1)
+    radio.sendValue("x", sprite.get(LedSpriteProperty.X))
 })
 radio.onReceivedValue(function (name, value) {
     if (name == "x") {
